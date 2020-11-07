@@ -5,7 +5,7 @@ using namespace std;
 
 // Function to swap position of elements
 void swap(int *a, int *b) {
-int t = 0;
+  int t = 0;
   int t = *a;
   *a = *b;
   *b = t;
@@ -14,8 +14,9 @@ int t = 0;
 // Function to print eklements of an array
 void printArray(int array[], int size) {
   int i;
-  for (i = 0; i < size; i++)
+  for (i = 0; i < size; i++) {
     cout << array[i] << " ";
+  }
   cout << endl;
 }
 
@@ -27,10 +28,10 @@ int partition(int array[], int low, int high) {
 
   // Put the elements smaller than pivot on the left 
   // and greater than pivot on the right of pivot
-  for (int j = low; j < pivot; j++) {
+  for (int j = low; j < high; j++) {
     if (array[j] <= pivot) {
       i++;
-      swap(&array[j], &array[i]);
+      swap(&array[i], &array[j]);
     }
   }
   printArray(array, 7);
